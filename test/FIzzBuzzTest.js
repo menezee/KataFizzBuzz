@@ -1,6 +1,7 @@
 const assert = require('assert');
 const isDivisibleByN = require('../FizzBuzz').isDivisibleByN;
 const fizzBuzzFunction = require('../FizzBuzz').fizzBuzzFunction;
+const numberContains = require('../FizzBuzz').numberContains;
 
 describe('Function returns true if dividend is divisible by divisor', function () {
   context('When rest is 0', function () {
@@ -18,22 +19,23 @@ describe('Function returns true if dividend is divisible by divisor', function (
   });
 });
 
-describe('Function returns a string if number is divisible by 3 or 5', function () {
+describe('Function returns a string if number is divisible by 3 or 5 || contain 3 or 5', function () {
   let arr;
 
   before(function() {
     arr = fizzBuzzFunction();
   });
 
-  context('When number is divisible by 3', function () {
+  context('When number is divisible by 3 or contains 3', function () {
     it('it should return Fizz', function () {
       assert.equal('Fizz', arr[3]);
       assert.equal('Fizz', arr[9]);
       assert.equal('Fizz', arr[33]);
+      assert.equal('Fizz', arr[13]);
     });
   });
 
-  context('When number is divisible by 5', function () {
+  context('When number is divisible by 5 or contains 5', function () {
     it('it should return Buzz', function () {
       assert.equal('Buzz', arr[5]);
       assert.equal('Buzz', arr[10]);
@@ -46,6 +48,28 @@ describe('Function returns a string if number is divisible by 3 or 5', function 
       assert.equal('FizzBuzz', arr[15]);
       assert.equal('FizzBuzz', arr[30]);
       assert.equal('FizzBuzz', arr[45]);
+    });
+  });
+
+  context('When number contains 3 or 5', function () {
+    it('it should return FizzBuzz', function () {
+      assert.equal('FizzBuzz', arr[53]);
+    });
+  });
+});
+
+describe('Function returns true if num contains val', function () {
+  context('When num contains val', function () {
+    it('it should return true', function () {
+      assert.equal(true, numberContains(30, 3));
+      assert.equal(true, numberContains(548, 5));
+    });
+  });
+
+  context('When num does not contain val', function () {
+    it('it should return false', function () {
+      assert.equal(false, numberContains(5, 3));
+      assert.equal(false, numberContains(31, 5));
     });
   });
 });
