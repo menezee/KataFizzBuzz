@@ -38,3 +38,10 @@ you can run
 ```bash
 npm test
 ```
+
+## Solution
+
+The idea was to write an application without many external dependencies, so I focused on creating the simplest solution with high test coverage.
+I've tried to separate contraints into different functions, so they could be easily tested and validated. 
+
+When everything was working as expected I started some refactoring following the cycle: red -> green -> refactoring.
