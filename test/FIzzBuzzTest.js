@@ -29,32 +29,32 @@ describe('Function returns a string if number is divisible by 3 or 5 || contain 
 
   context('When number is divisible by 3 or contains 3', function () {
     it('it should return Fizz', function () {
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[3]);
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[9]);
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[33]);
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[13]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Fizz, arr[3]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Fizz, arr[9]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Fizz, arr[33]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Fizz, arr[13]);
     });
   });
 
   context('When number is divisible by 5 or contains 5', function () {
     it('it should return Buzz', function () {
-      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[5]);
-      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[10]);
-      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[20]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Buzz, arr[5]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Buzz, arr[10]);
+      assert.equal(FIZZBUZZ_CONSTANTS.Buzz, arr[20]);
     });
   });
 
   context('When number is divisible by 3 and 5', function () {
     it('it should return FizzBuzz', function () {
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[15]);
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[30]);
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[45]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FizzBuzz, arr[15]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FizzBuzz, arr[30]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FizzBuzz, arr[45]);
     });
   });
 
   context('When number contains 3 or 5', function () {
     it('it should return FizzBuzz', function () {
-      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[53]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FizzBuzz, arr[53]);
     });
   });
 });

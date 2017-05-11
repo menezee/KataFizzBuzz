@@ -7,39 +7,24 @@ const numberContains = (num, val) => {
 }
 
 const FIZZBUZZ_CONSTANTS = {
-  FIZZ: 'Fizz',
-  BUZZ: 'Buzz',
-  FIZZBUZZ: 'FizzBuzz',
+  Fizz: 'Fizz',
+  Buzz: 'Buzz',
+  FizzBuzz: 'FizzBuzz',
 }
 
 const isFizz = (num) => {
-  return isDivisibleByN(num, 3) || numberContains(num, 3);
+  return isDivisibleByN(num, 3) || numberContains(num, 3) ? FIZZBUZZ_CONSTANTS.Fizz : '';
 }
 
 const isBuzz = (num) => {
-  return isDivisibleByN(num, 5) || numberContains(num, 5);
-}
-
-const fizzBuzzFunction = (num) => {
-  if(isFizz(num) && isBuzz(num)) {
-    return FIZZBUZZ_CONSTANTS.FIZZBUZZ;
-  }
-  else if(isFizz(num)) {
-    return FIZZBUZZ_CONSTANTS.FIZZ;
-  }
-  else if(isBuzz(num)) {
-    return FIZZBUZZ_CONSTANTS.BUZZ;
-  }
-  else {
-    return num;
-  }
+  return isDivisibleByN(num, 5) || numberContains(num, 5) ? FIZZBUZZ_CONSTANTS.Buzz : '';
 }
 
 const generateFizzBuzzSequence = (range) => {
   const arr = [];
 
   for (let i = 1; i <= range; i++) {
-    arr[i] = fizzBuzzFunction(i);
+    arr[i] = FIZZBUZZ_CONSTANTS[isFizz(i) + isBuzz(i)] || i;
   }
 
   return arr;
