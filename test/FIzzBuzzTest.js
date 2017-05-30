@@ -56,6 +56,19 @@ describe('Function returns a string if number is divisible by 3 or 5 || contain 
       assert.equal('FizzBuzz', arr[53]);
     });
   });
+
+  context('When number is neither divisible by 3 nor 5', function () {
+    it('it should return the number itself', function () {
+      assert.equal(2, arr[2]);
+      assert.equal(1, arr[1]);
+      assert.equal(4, arr[4]);
+      assert.equal(7, arr[7]);
+      assert.equal(11, arr[11]);
+      assert.equal(7, arr[7]);
+      assert.equal(41, arr[41]);
+      assert.equal(47, arr[47]);
+    });
+  });
 });
 
 describe('Function returns true if num contains val', function () {
