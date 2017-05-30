@@ -1,7 +1,8 @@
 const assert = require('assert');
-const isDivisibleByN = require('../FizzBuzz').isDivisibleByN;
-const fizzBuzzFunction = require('../FizzBuzz').fizzBuzzFunction;
-const numberContains = require('../FizzBuzz').numberContains;
+const isDivisibleByN = require('../src/FizzBuzz').isDivisibleByN;
+const numberContains = require('../src/FizzBuzz').numberContains;
+const generateFizzBuzzSequence = require('../src/FizzBuzz').generateFizzBuzzSequence;
+const FIZZBUZZ_CONSTANTS = require('../src/FizzBuzz').FIZZBUZZ_CONSTANTS;
 
 describe('Function returns true if dividend is divisible by divisor', function () {
   context('When rest is 0', function () {
@@ -23,37 +24,37 @@ describe('Function returns a string if number is divisible by 3 or 5 || contain 
   let arr;
 
   before(function() {
-    arr = fizzBuzzFunction();
+    arr = generateFizzBuzzSequence(100);
   });
 
   context('When number is divisible by 3 or contains 3', function () {
     it('it should return Fizz', function () {
-      assert.equal('Fizz', arr[3]);
-      assert.equal('Fizz', arr[9]);
-      assert.equal('Fizz', arr[33]);
-      assert.equal('Fizz', arr[13]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[3]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[9]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[33]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZ, arr[13]);
     });
   });
 
   context('When number is divisible by 5 or contains 5', function () {
     it('it should return Buzz', function () {
-      assert.equal('Buzz', arr[5]);
-      assert.equal('Buzz', arr[10]);
-      assert.equal('Buzz', arr[20]);
+      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[5]);
+      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[10]);
+      assert.equal(FIZZBUZZ_CONSTANTS.BUZZ, arr[20]);
     });
   });
 
   context('When number is divisible by 3 and 5', function () {
     it('it should return FizzBuzz', function () {
-      assert.equal('FizzBuzz', arr[15]);
-      assert.equal('FizzBuzz', arr[30]);
-      assert.equal('FizzBuzz', arr[45]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[15]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[30]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[45]);
     });
   });
 
   context('When number contains 3 or 5', function () {
     it('it should return FizzBuzz', function () {
-      assert.equal('FizzBuzz', arr[53]);
+      assert.equal(FIZZBUZZ_CONSTANTS.FIZZBUZZ, arr[53]);
     });
   });
 
